@@ -1,3 +1,5 @@
+**[English](README.md) | [Deutsch](LIESMICH.md) (includes Images / Mit Bildern)**
+
 # Excel-Outlook-Calendar-Sync
 
 Synchronisiere Outlook Termine automatisch mit einer Excel Tabelle. Ideal zum Planen von mehreren komplexen Terminen, z.B. bei Veranstaltungsreihen, oder zum automatischen Erstellen vieler Termine. Kann als alternative zu den Kalender-Features von Notion, Airtable, ClickUp, mondays, etc genutzt werden.
