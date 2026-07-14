@@ -187,6 +187,6 @@ Parameter können feste Werte, dynamische Inhalte oder Ausdrücke (Formeln) sein
 - Excel-Datei und Tabelle festlegen (Daten _müssen_ in einer Tabelle gespeichert sein)
 - Schlüsselspalte: Index
 - Schlüsselwert: `items('Alle_Excel_Zeilen')?['Index']`
-- Erweiterte Parameter > EventID: `outputs('Termin_erstellen_(V4)')?['body/id']`
+- Erweiterte Parameter > EventID: `outputs('Termin_erstellen_(V4)_1')?['body/id']`
 
 ![Zeile aktualisieren 1](images/18.png)
