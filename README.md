@@ -12,8 +12,7 @@ Die Excel Tabelle fungiert als SPOT (Single Point of Truth). Änderungen der Ter
 ## Anleitung
 
 ### Schritt 0
-Erstelle einen neuen Flow auf https://make.powerautomate.com
-- Geplanter Cloud-Flow (alle 2–5 Minuten)
+Erstelle einen neuen Flow (Geplanter Cloud-Flow (alle 2–5 Minuten)) auf https://make.powerautomate.com
 
 Durch **+** werden Aktionen hinzugefügt.
 Parameter können feste Werte, dynamische Inhalte oder Ausdrücke (Formeln) sein. Wenn ein Textfeld ausgewählt ist, erscheinen die zwei letztgenannten Optionen. Durch sie werden Daten weitergegeben. Dynamische Inhalte sind auch Ausdrücke, zum Beispiel: Dynamischer Inhalt > Termine abrufen > body/value entspricht dem Ausdruck `outputs('Termine_abrufen_(V4)')?['body/value']`.
