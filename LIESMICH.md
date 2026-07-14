@@ -1,4 +1,4 @@
-**[German version / Deutsche Version](LIESMICH.md) (includes Images / Mit Bildern)**
+**[English version](README.md) (without Images)**
 
 # Excel-Outlook-Calendar-Sync
 
