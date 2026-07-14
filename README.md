@@ -11,7 +11,11 @@ Die Excel Tabelle fungiert als SPOT (Single Point of Truth). Änderungen der Ter
 
 ## Anleitung
 
-### Schritt 0
+### Vorbereitungen
+Erstelle eine Excel Sheet mit einer _Tabelle_, die mindestens die folgenden Spalten hat:
+`Subject;	StartDateTime;	EndDateTime;	Desciption;	Participants;	EventID;	Index`
+![Excel Tabelle](images/00.png)
+
 Erstelle einen neuen Flow (Geplanter Cloud-Flow (alle 2–5 Minuten)) auf https://make.powerautomate.com
 
 Durch **+** werden Aktionen hinzugefügt.
