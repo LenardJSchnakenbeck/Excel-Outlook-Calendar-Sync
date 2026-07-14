@@ -2,7 +2,7 @@
 
 Erstelle Outlook Termine automatisch aus einer Excel Liste. Ideal zum Planen von mehreren komplexen Terminen, z.B. bei Veranstaltungsreihen, oder zum automatischen Erstellen vieler Termine.
 In dieser Anleitung wird den automatisch erstellten Terminen die Kategorie "automatisch erstellt" zugewiesen und die Automatisierung betrifft auch nur diese Termine. Dadurch kann der Outlook Kalendar ansonsten normal genutzt werden.
-Die Excel Tabelle fungiert als SPOT (Single Point of Truth), Änderungen der Termine sollten hier vorgenommen werden, da sie sonst überschrieben werden.
+Die Excel Tabelle fungiert als SPOT (Single Point of Truth). Änderungen der Termine sollten hier vorgenommen werden, da sie sonst überschrieben werden.
 
 ## Übersicht
 ![Übersicht](images/01.jpg)
