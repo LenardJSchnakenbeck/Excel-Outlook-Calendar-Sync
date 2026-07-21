@@ -7,7 +7,7 @@ In dieser Anleitung wird den automatisch erstellten Terminen die Kategorie "auto
 Die Excel Tabelle fungiert als SPOT (Single Point of Truth). Änderungen der Termine sollten hier vorgenommen werden, da sie sonst überschrieben werden.
 
 ## Übersicht
-![Übersicht](images/01.jpg)
+![Übersicht](images/Overview.jpg)
 
 
 
@@ -16,7 +16,7 @@ Die Excel Tabelle fungiert als SPOT (Single Point of Truth). Änderungen der Ter
 ### Vorbereitungen
 Erstelle eine Excel Sheet mit einer _Tabelle_, die mindestens die folgenden Spalten hat:
 `Subject;	StartDateTime;	EndDateTime;	Desciption;	Participants;	EventID;	Index`
-![Excel Tabelle](images/00.png)
+![Excel Tabelle](images/Preparation.png)
 
 Erstelle einen neuen Flow (Geplanter Cloud-Flow (alle 2–5 Minuten)) auf https://make.powerautomate.com
 
@@ -35,7 +35,7 @@ Parameter können feste Werte, dynamische Inhalte oder Ausdrücke (Formeln) sein
 - Erweiterte Parameter > Abfrage filtern auswählen
 - Abfrage filtern: `categories/any(c:c eq 'automatisch erstellt')` (kann durch eine beliebige Kategorie ersetzt werden)
 
-![Termine abrufen](images/02.png)
+![Termine abrufen](images/01.png)
 
 ### 2. In Tabelle vorhandene Zeilen auflisten
 *(Excel Online (Business))*
@@ -43,7 +43,7 @@ Parameter können feste Werte, dynamische Inhalte oder Ausdrücke (Formeln) sein
 - Excel-Datei und Tabelle festlegen (Daten _müssen_ in einer Tabelle gespeichert sein)
 - Optional: Erweiterte Parameter > DateTime-Format auswählen (z. B. ISO 8601)
 
-![In Tabelle vorhandene Zeilen auflisten](images/03.png)
+![In Tabelle vorhandene Zeilen auflisten](images/02.png)
 
 ### 3. Auswählen (*Excel EventIDs*)
 *(Datenvorgang)*
@@ -52,14 +52,14 @@ Parameter können feste Werte, dynamische Inhalte oder Ausdrücke (Formeln) sein
 - Bei Zuordnen zum Text-Modus wechseln
 - Zuordnen: `item()?['EventID']`
 
-![Excel EventIDs](images/04.png)
+![Excel EventIDs](images/03.png)
 
 ### 4. Auf alle anwenden (*Alle Outlook Termine*)
 *(Steuerung)*
 
 - Ausgabe: `outputs('Termine_abrufen_(V4)')?['body/value']` (Ausgabe von Schritt 1)
 
-![Alle Outlook Termine](images/05.png)
+![Alle Outlook Termine](images/04.png)
 
 ### 5. Bedingung (*Outlook ID in Excel EventIDs*)
 **Pfad:** Alle Outlook Termine
@@ -67,7 +67,7 @@ Parameter können feste Werte, dynamische Inhalte oder Ausdrücke (Formeln) sein
 - Und:
   - `[body('Excel_Event_IDs')]` enthält `items('Alle_Outlook_Termine')?['id']` (ID aus dem jeweiligen Element der Schleife aus Schritt 4)
 
-![Outlook ID in Excel EventIDs](images/06.png)
+![Outlook ID in Excel EventIDs](images/05.png)
 
 ### 6. Ereignis löschen (V2)
 **Pfad:** Alle Outlook Termine › Outlook ID in Excel EventIDs › Falsch
@@ -77,7 +77,7 @@ Parameter können feste Werte, dynamische Inhalte oder Ausdrücke (Formeln) sein
 - Kalender-ID: `Kalender`
 - ID: `items('Alle_Outlook_Termine')?['id']`
 
-![Ereignis löschen](images/07.png)
+![Ereignis löschen](images/06.png)
 
 ### 7. Termine abrufen (V4) (*Termine abrufen (V4) 1*)
 *(Office 365 Outlook)*
@@ -85,7 +85,7 @@ Parameter können feste Werte, dynamische Inhalte oder Ausdrücke (Formeln) sein
 - Kalender-ID: `Kalender`
 - Erweiterte Parameter > Abfrage filtern: `categories/any(c:c eq 'automatisch erstellt')` (kann durch eine beliebige Kategorie ersetzt werden)
 
-![Termine abrufen 1](images/08.png)
+![Termine abrufen 1](images/07.png)
 
 ### 8. Auswählen (*Outlook IDs*)
 *(Datenvorgang)*
@@ -94,14 +94,14 @@ Parameter können feste Werte, dynamische Inhalte oder Ausdrücke (Formeln) sein
 - Bei Zuordnen zum Text-Modus wechseln
 - Zuordnen: `item()?['ID']`
 
-![Outlook IDs](images/09.png)
+![Outlook IDs](images/08.png)
 
 ### 9. Auf alle anwenden (*Alle Excel Zeilen*)
 *(Steuerung)*
 
 - Ausgabe: `outputs('In_Tabelle_vorhandene_Zeilen_auflisten')?['body/value']` (Ausgabe von Schritt 2)
 
-![Alle Excel Zeilen](images/10.png)
+![Alle Excel Zeilen](images/09.png)
 
 ### 10. Bedingung (*leere EventID aber volles Subject*)
 **Pfad:** Alle Excel Zeilen
@@ -110,7 +110,7 @@ Parameter können feste Werte, dynamische Inhalte oder Ausdrücke (Formeln) sein
   - `empty(items('Alle_Excel_Zeilen')?['EventID'])` ist gleich `true` (EventID aus dem jeweiligen Element der Schleife aus Schritt 9)
   - `empty(items('Alle_Excel_Zeilen')?['Subject'])` ist gleich `false` (Subject aus dem jeweiligen Element der Schleife aus Schritt 9)
 
-![leere EventID aber volles Subject](images/11.png)
+![leere EventID aber volles Subject](images/10.png)
 
 ### 11. Termin erstellen (V4)
 **Pfad:** Alle Excel Zeilen › leere EventID aber volles Subject › Wahr
@@ -125,7 +125,7 @@ Parameter können feste Werte, dynamische Inhalte oder Ausdrücke (Formeln) sein
   - Erforderliche Teilnehmer
   - Text (steht später in der Beschreibung des Termins; kann aus einer eigenen Spalte der Excel-Tabelle stammen oder aus mehreren dynamischen Inhalten zusammengesetzt werden, z. B. Ort, relevante Links etc.)
 
-![Termin erstellen](images/12.png)
+![Termin erstellen](images/11.png)
 
 ### 12. Zeile aktualisieren
 **Pfad:** Alle Excel Zeilen › leere EventID aber volles Subject › Wahr
@@ -137,7 +137,7 @@ Parameter können feste Werte, dynamische Inhalte oder Ausdrücke (Formeln) sein
 - Schlüsselwert: `items('Alle_Excel_Zeilen')?['Index']`
 - Erweiterte Parameter > EventID: `outputs('Termin_erstellen_(V4)')?['body/id']`
 
-![Zeile aktualisieren](images/13.png)
+![Zeile aktualisieren](images/12.png)
 
 ### 13. Bedingung (*leeres Subject*)
 **Pfad:** Alle Excel Zeilen › leere EventID aber volles Subject › Falsch
@@ -147,19 +147,41 @@ Parameter können feste Werte, dynamische Inhalte oder Ausdrücke (Formeln) sein
 - Und:
   - `empty(items('Alle_Excel_Zeilen')?['Subject'])` ist gleich `true`
 
-![leeres Subject](images/14.png)
+![leeres Subject](images/13.png)
 
 ### 14. Bedingung (*EventID in Outlook IDs*)
 **Pfad:** Alle Excel Zeilen › leere EventID aber volles Subject › Falsch › leeres Subject › Falsch
 
-*(Excel Online (Business))*
+*(Steuerung)*
 
 - Und:
   - `body('Outlook_IDs')` enthält `items('Alle_Excel_Zeilen')?['EventID']`
 
 ![EventID in Outlook IDs](images/15.png)
 
-### 15. Termin aktualisieren (V4)
+### 15. Termin abrufen (V3)
+**Pfad:** Alle Excel Zeilen › leere EventID aber volles Subject › Falsch › leeres Subject › Falsch › EventID in Outlook IDs › Wahr
+
+*(Office 365 Outlook)*
+
+- Kalender-ID: `Kalender`
+- Element-ID: `items('Alle_Excel_Zeilen')?['EventID']`
+
+![Termin abrufen](images/16.png)
+
+### 16. Bedingung (*Termin updated?*)
+**Pfad:** Alle Excel Zeilen › leere EventID aber volles Subject › Falsch › leeres Subject › Falsch › EventID in Outlook IDs › Wahr
+
+*(Steuerung)*
+
+- Und:
+  - `items('Alle_Excel_Zeilen')?['Subject']` ist gleich `outputs('Termin_abrufen_(V3)')?['body/subject']`
+  - `items('Alle_Excel_Zeilen')?['StartDateTime']` ist gleich `outputs('Termin_abrufen_(V3)')?['body/start']`
+  - `items('Alle_Excel_Zeilen')?['EndDateTime']` ist gleich `outputs('Termin_abrufen_(V3)')?['body/end']`
+  - `items('Alle_Excel_Zeilen')?['Participants']` ist gleich `outputs('Termin_abrufen_(V3)')?['body/requiredAttendees']`
+  - `items('Alle_Excel_Zeilen')?['Description']` ist gleich `outputs('Termin_abrufen_(V3)')?['body/body']` (Achtung: Es gibt 2 dynamische Inhalte mit dem Namen `Text`)
+
+### 17. Termin aktualisieren (V4)
 **Pfad:** Alle Excel Zeilen › leere EventID aber volles Subject › Falsch › leeres Subject › Falsch › EventID in Outlook IDs › Wahr
 
 *(Office 365 Outlook)*
@@ -170,18 +192,18 @@ Parameter können feste Werte, dynamische Inhalte oder Ausdrücke (Formeln) sein
 - Erweiterte Parameter > Kategorien > Kategorien Item - 1: `automatisch erstellt`
 - Optionale Parameter (aus Erweiterte Parameter): siehe Schritt 11
 
-![Termin aktualisieren](images/16.png)
+![Termin aktualisieren](images/17.png)
 
-### 16. Termin erstellen (V4) (*Termin erstellen (V4) 1*)
+### 18. Termin erstellen (V4) (*Termin erstellen (V4) 1*)
 **Pfad:** Alle Excel Zeilen › leere EventID aber volles Subject › Falsch › leeres Subject › Falsch › EventID in Outlook IDs › Falsch
 
 *(Office 365 Outlook)*
 
 *(wie in Schritt 11 & 15)*
 
-![Termin erstellen 1](images/17.png)
+![Termin erstellen 1](images/18.png)
 
-### 17. Zeile aktualisieren (*Zeile aktualisieren 1*)
+### 19. Zeile aktualisieren (*Zeile aktualisieren 1*)
 **Pfad:** Alle Excel Zeilen › leere EventID aber volles Subject › Falsch › leeres Subject › Falsch › EventID in Outlook IDs › Falsch
 
 *(Excel Online (Business))*
@@ -191,4 +213,4 @@ Parameter können feste Werte, dynamische Inhalte oder Ausdrücke (Formeln) sein
 - Schlüsselwert: `items('Alle_Excel_Zeilen')?['Index']`
 - Erweiterte Parameter > EventID: `outputs('Termin_erstellen_(V4)_1')?['body/id']`
 
-![Zeile aktualisieren 1](images/18.png)
+![Zeile aktualisieren 1](images/19.png)
