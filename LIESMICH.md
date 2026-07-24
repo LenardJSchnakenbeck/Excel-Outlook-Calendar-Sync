@@ -157,7 +157,7 @@ Parameter können feste Werte, dynamische Inhalte oder Ausdrücke (Formeln) sein
 - Und:
   - `body('Outlook_IDs')` enthält `items('Alle_Excel_Zeilen')?['EventID']`
 
-![EventID in Outlook IDs](images/15.png)
+![EventID in Outlook IDs](images/14.png)
 
 ### 15. Termin abrufen (V3)
 **Pfad:** Alle Excel Zeilen › leere EventID aber volles Subject › Falsch › leeres Subject › Falsch › EventID in Outlook IDs › Wahr
@@ -167,7 +167,7 @@ Parameter können feste Werte, dynamische Inhalte oder Ausdrücke (Formeln) sein
 - Kalender-ID: `Kalender`
 - Element-ID: `items('Alle_Excel_Zeilen')?['EventID']`
 
-![Termin abrufen](images/16.png)
+![Termin abrufen](images/15.png)
 
 ### 16. Bedingung (*Termin updated?*)
 **Pfad:** Alle Excel Zeilen › leere EventID aber volles Subject › Falsch › leeres Subject › Falsch › EventID in Outlook IDs › Wahr
@@ -180,6 +180,9 @@ Parameter können feste Werte, dynamische Inhalte oder Ausdrücke (Formeln) sein
   - `items('Alle_Excel_Zeilen')?['EndDateTime']` ist gleich `outputs('Termin_abrufen_(V3)')?['body/end']`
   - `items('Alle_Excel_Zeilen')?['Participants']` ist gleich `outputs('Termin_abrufen_(V3)')?['body/requiredAttendees']`
   - `items('Alle_Excel_Zeilen')?['Description']` ist gleich `outputs('Termin_abrufen_(V3)')?['body/body']` (Achtung: Es gibt 2 dynamische Inhalte mit dem Namen `Text`)
+ 
+
+![Termin abrufen](images/16.png)
 
 ### 17. Termin aktualisieren (V4)
 **Pfad:** Alle Excel Zeilen › leere EventID aber volles Subject › Falsch › leeres Subject › Falsch › EventID in Outlook IDs › Wahr
