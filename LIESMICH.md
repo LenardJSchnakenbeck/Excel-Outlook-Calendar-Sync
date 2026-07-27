@@ -1,4 +1,4 @@
-**[English version](README.md) (without Images)**
+**[English version](README.md)**
 
 # Excel-Outlook-Calendar-Sync
 
