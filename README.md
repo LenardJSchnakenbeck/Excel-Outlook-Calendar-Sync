@@ -1,14 +1,15 @@
 **[German version / Deutsche Version](LIESMICH.md)**
 
 # Excel-Outlook-Calendar-Sync
- 
+
+![Logo](images/Logo.jpg)
+
 Automatically synchronize Outlook events with an Excel table. Ideal for planning multiple complex events, e.g. for event series, or for automatically creating many events. Can be used as an alternative to the calendar features of Notion, Airtable, ClickUp, monday.com, etc.
 
 In this guide, the automatically created events are assigned the category "automatically created", and the automation only affects these events. This way, the Outlook calendar can otherwise be used normally.
 The Excel table acts as the SPOT (Single Point of Truth). Changes to events should be made here, otherwise they will be overwritten.
 
-
-> **Note:** The images show the German version, but the text contains all necessary information by itself. If anything is unclear, feel free to reach out to me.
+**Note:** The images show the German version, but the text contains all necessary information by itself. If anything is unclear, feel free to reach out to me.
 
  
 ## Overview
