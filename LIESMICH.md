@@ -4,7 +4,7 @@
 
 ![Logo](images/Logo.jpg)
 
-Automatische Synchronisation von Outlook-Terminen mit einer Excel Tabelle. Ideal zum Planen von mehreren komplexen Terminen, z.B. bei Veranstaltungsreihen, oder zum automatischen Erstellen vieler Termine. Kann als Alternative zu den Kalender-Features von Notion, Airtable, ClickUp, mondays, etc genutzt werden.
+Automatische Synchronisation von Outlook-Terminen mit einer Excel Tabelle. Ideal zum Planen von mehreren komplexen Terminen, z.B. bei Veranstaltungsreihen, oder zum automatischen Erstellen vieler Termine. Kann als Alternative zu den Kalender-Features von Notion, Airtable, ClickUp, monday, etc genutzt werden.
 
 
 In dieser Anleitung wird den automatisch erstellten Terminen die Kategorie "automatisch erstellt" zugewiesen und die Automatisierung betrifft auch nur diese Termine. Dadurch kann der Outlook Kalendar ansonsten normal genutzt werden.
