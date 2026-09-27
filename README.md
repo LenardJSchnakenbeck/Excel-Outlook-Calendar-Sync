@@ -24,13 +24,14 @@ Create an Excel sheet with a _Table_ that has at least the following columns:
 
 Create a new flow (Scheduled cloud flow (every 2–5 minutes)) at https://make.powerautomate.com
 
-Actions are added using **+**.
-Parameters can be fixed values, dynamic content, or expressions (formulas). When a text field is selected, the latter two options appear. These are used to pass data along. Dynamic content is also based on expressions, for example: Dynamic content > Get events > body/value corresponds to the expression `outputs('Get_events_(V4)')?['body/value']`. 
-
 ### Legend
 - **Action** is shown in the heading. If the action has been renamed, its custom name appears in italics in parentheses afterward, e.g. **Condition** (*Outlook ID in Excel EventIDs*).
 - **Path** shows which loop or branch the action is located in. If the action is at the top level of the flow, the Path line is omitted.
 - *(Type)* appears below the heading / the Path. Actions are grouped by type (*Office 365 Outlook*, *Data Operation*, *Control*, etc.).
+
+Actions are added using the **+**.
+
+Parameters of the Actions can be fixed values, dynamic content, or expressions (formulas). When a text field is selected, the latter two options appear. These are used to pass data between Actions. Dynamic content is also based on expressions, for example: Dynamic content > Get events > body/value corresponds to the expression `outputs('Get_events_(V4)')?['body/value']`. 
 
 ### 1. Get events (V4)
 *(Office 365 Outlook)*
