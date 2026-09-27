@@ -22,13 +22,14 @@ Erstelle eine Excel Sheet mit einer _Tabelle_, die mindestens die folgenden Spal
 
 Erstelle einen neuen Flow (Geplanter Cloud-Flow (alle 2–5 Minuten)) auf https://make.powerautomate.com
 
-Durch **+** werden Aktionen hinzugefügt.
-Parameter können feste Werte, dynamische Inhalte oder Ausdrücke (Formeln) sein. Wenn ein Textfeld ausgewählt ist, erscheinen die zwei letztgenannten Optionen. Durch sie werden Daten weitergegeben. Dynamische Inhalte sind auch Ausdrücke, zum Beispiel: Dynamischer Inhalt > Termine abrufen > body/value entspricht dem Ausdruck `outputs('Termine_abrufen_(V4)')?['body/value']`.
-
 ### Legende
 - **Aktion** steht in der Überschrift. Wurde die Aktion umbenannt, steht der eigene Name kursiv in Klammern dahinter, z. B. **Bedingung** (*Outlook ID in Excel EventIDs*).
 - **Pfad** zeigt, in welcher Schleife bzw. welchem Verzweigungszweig sich die Aktion befindet. Steht die Aktion auf der obersten Ebene des Flows, entfällt die Pfad-Zeile.
 - *(Typ)* steht unter der Überschrift / dem Pfad. Aktionen sind nach Typen sortiert ( *Office 365 Outlook*, *Datenvorgang*, *Steuerung* etc).
+
+Durch ein **+** werden Aktionen hinzugefügt.
+
+Parameter der Aktionen können feste Werte, dynamische Inhalte oder Ausdrücke (Formeln) sein. Wenn ein Textfeld ausgewählt ist, erscheinen die zwei letztgenannten Optionen. Durch sie werden Daten weitergegeben. Dynamische Inhalte sind auch Ausdrücke, zum Beispiel: Dynamischer Inhalt > Termine abrufen > body/value entspricht dem Ausdruck `outputs('Termine_abrufen_(V4)')?['body/value']`.
 
 ### 1. Termine abrufen (V4)
 *(Office 365 Outlook)*
